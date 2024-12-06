@@ -1,0 +1,24 @@
+{
+    "name": "jdz/http",
+    "type": "library",
+    "description": "JDZ HTTP utils",
+    "keywords": ["JDZ","utilities","http","response"],
+    "homepage": "https://jdz.joffreydemetz.com/http/",
+    "version": "1.0.0",
+    "license": "MIT",
+    
+    "authors": [
+        {
+            "name": "Joffrey Demetz",
+            "email": "joffrey.demetz@gmail.com",
+            "homepage": "https://joffreydemetz.com",
+            "role": "Lead"
+        }
+    ],
+    
+    "autoload": {
+        "psr-4": {
+            "JDZ\\Utils\\": "src"
+        }
+    }
+}
