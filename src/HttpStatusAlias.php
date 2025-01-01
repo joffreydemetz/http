@@ -1,10 +1,12 @@
 <?php
+
 /**
  * (c) Joffrey Demetz <joffrey.demetz@gmail.com>
  * 
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace JDZ\Utils;
 
 use JDZ\Utils\HttpStatusCode;
@@ -17,13 +19,13 @@ use JDZ\Utils\HttpStatusText;
  */
 enum HttpStatusAlias: string
 {
-  // Informational 1xx
+    // Informational 1xx
   case HTTP_100 = 'HTTP_CONTINUE';
   case HTTP_101 = 'HTTP_SWITCHING_PROTOCOLS';
   case HTTP_102 = 'HTTP_PROCESSING';
   case HTTP_103 = 'HTTP_EARLY_HINTS';
 
-  // Successful 2xx
+    // Successful 2xx
   case HTTP_200 = 'HTTP_OK';
   case HTTP_201 = 'HTTP_CREATED';
   case HTTP_202 = 'HTTP_ACCEPTED';
@@ -35,7 +37,7 @@ enum HttpStatusAlias: string
   case HTTP_208 = 'HTTP_ALREADY_REPORTED';
   case HTTP_226 = 'HTTP_IM_USED';
 
-  // Redirection 3xx
+    // Redirection 3xx
   case HTTP_300 = 'HTTP_MULTIPLE_CHOICES';
   case HTTP_301 = 'HTTP_MOVED_PERMANENTLY';
   case HTTP_302 = 'HTTP_FOUND';
@@ -45,7 +47,7 @@ enum HttpStatusAlias: string
   case HTTP_307 = 'HTTP_TEMPORARY_REDIRECT';
   case HTTP_308 = 'HTTP_PERMANENTLY_REDIRECT';
 
-  // Client Error 4xx
+    // Client Error 4xx
   case HTTP_400 = 'HTTP_BAD_REQUEST';
   case HTTP_401 = 'HTTP_UNAUTHORIZED';
   case HTTP_402 = 'HTTP_PAYMENT_REQUIRED';
@@ -76,7 +78,7 @@ enum HttpStatusAlias: string
   case HTTP_431 = 'HTTP_REQUEST_HEADER_FIELDS_TOO_LARGE';
   case HTTP_451 = 'HTTP_UNAVAILABLE_FOR_LEGAL_REASONS';
 
-  // Server Error 5xx
+    // Server Error 5xx
   case HTTP_500 = 'HTTP_INTERNAL_SERVER_ERROR';
   case HTTP_501 = 'HTTP_NOT_IMPLEMENTED';
   case HTTP_502 = 'HTTP_BAD_GATEWAY';
@@ -88,21 +90,21 @@ enum HttpStatusAlias: string
   case HTTP_508 = 'HTTP_LOOP_DETECTED';
   case HTTP_510 = 'HTTP_NOT_EXTENDED';
   case HTTP_511 = 'HTTP_NETWORK_AUTHENTICATION_REQUIRED';
-  
+
   public static function fromName(string $name): static
   {
-    $constName = static::class.'::'.$name;
-    if ( !defined($constName) ){
-      throw new \ValueError(static::class.'::'.$name.' not found');
+    $constName = static::class . '::' . $name;
+    if (!defined($constName)) {
+      throw new \ValueError(static::class . '::' . $name . ' not found');
     }
     return constant($constName);
   }
-  
+
   public static function fromHttpStatusCode(HttpStatusCode $statusCode): static
   {
     return self::fromName($statusCode->name);
   }
-  
+
   public static function fromHttpStatusText(HttpStatusText $statusText): static
   {
     return self::fromName($statusText->name);
