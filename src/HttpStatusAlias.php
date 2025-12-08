@@ -17,7 +17,7 @@ use JDZ\Utils\HttpStatusText;
  */
 enum HttpStatusAlias: string
 {
-    // Informational 1xx
+  // Informational 1xx
   case HTTP_100 = 'HTTP_CONTINUE';
   case HTTP_101 = 'HTTP_SWITCHING_PROTOCOLS';
   case HTTP_102 = 'HTTP_PROCESSING';
