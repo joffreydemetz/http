@@ -13,6 +13,7 @@ composer require jdz/http
 ## Versions 
 
 **V1**: Provides three separate enums: `HttpStatusCode`, `HttpStatusText`, and `HttpStatusAlias`.
+
 **V2**: Added a single combined enum: `HttpStatus` with methods to get code, text, and alias.
 
 **Both approaches are valid and produce the same results!**
