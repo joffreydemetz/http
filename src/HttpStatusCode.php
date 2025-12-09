@@ -1,10 +1,10 @@
 <?php
+
 /**
- * (c) Joffrey Demetz <joffrey.demetz@gmail.com>
- * 
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ * @author    Joffrey Demetz <joffrey.demetz@gmail.com>
+ * @license   MIT License; <https://opensource.org/licenses/MIT>
  */
+
 namespace JDZ\Utils;
 
 use JDZ\Utils\HttpStatusAlias;
@@ -23,7 +23,7 @@ enum HttpStatusCode: int
   case HTTP_102 = 102;
   case HTTP_103 = 103;
 
-  // Successful 2xx
+    // Successful 2xx
   case HTTP_200 = 200;
   case HTTP_201 = 201;
   case HTTP_202 = 202;
@@ -35,7 +35,7 @@ enum HttpStatusCode: int
   case HTTP_208 = 208;
   case HTTP_226 = 226;
 
-  // Redirection 3xx
+    // Redirection 3xx
   case HTTP_300 = 300;
   case HTTP_301 = 301;
   case HTTP_302 = 302;
@@ -45,7 +45,7 @@ enum HttpStatusCode: int
   case HTTP_307 = 307;
   case HTTP_308 = 308;
 
-  // Client Error 4xx
+    // Client Error 4xx
   case HTTP_400 = 400;
   case HTTP_401 = 401;
   case HTTP_402 = 402;
@@ -75,7 +75,7 @@ enum HttpStatusCode: int
   case HTTP_431 = 431;
   case HTTP_451 = 451;
 
-  // Server Error 5xx
+    // Server Error 5xx
   case HTTP_500 = 500;
   case HTTP_501 = 501;
   case HTTP_502 = 502;
@@ -87,32 +87,21 @@ enum HttpStatusCode: int
   case HTTP_508 = 508;
   case HTTP_510 = 510;
   case HTTP_511 = 511;
-  
-  /* public static function fromInteger(int $value): static
-  {
-    $statusCode = self::tryFrom($value);
-    
-    if ( is_null($statusCode) ){
-      throw new \ValueError($value.' is not a valid name for enum "'.static::class.'"');
-    }
-    
-    return $statusCode;
-  } */
-  
+
   public static function fromName(string $name): static
   {
-    $constName = static::class.'::'.$name;
-    if ( !defined($constName) ){
-      throw new \ValueError(static::class.'::'.$name.' not found');
+    $constName = static::class . '::' . $name;
+    if (!defined($constName)) {
+      throw new \ValueError(static::class . '::' . $name . ' not found');
     }
     return constant($constName);
   }
-  
+
   public static function fromHttpStatusText(HttpStatusText $statusText): static
   {
     return self::fromName($statusText->name);
   }
-  
+
   public static function fromHttpStatusAlias(HttpStatusAlias $statusAlias): static
   {
     return self::fromName($statusAlias->name);

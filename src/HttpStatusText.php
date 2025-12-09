@@ -1,10 +1,10 @@
 <?php
+
 /**
- * (c) Joffrey Demetz <joffrey.demetz@gmail.com>
- * 
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ * @author    Joffrey Demetz <joffrey.demetz@gmail.com>
+ * @license   MIT License; <https://opensource.org/licenses/MIT>
  */
+
 namespace JDZ\Utils;
 
 use JDZ\Utils\HttpStatusCode;
@@ -23,7 +23,7 @@ enum HttpStatusText: string
   case HTTP_102 = 'Processing';
   case HTTP_103 = 'Early Hints';
 
-  // Successful 2xx
+    // Successful 2xx
   case HTTP_200 = 'OK';
   case HTTP_201 = 'Created';
   case HTTP_202 = 'Accepted';
@@ -35,7 +35,7 @@ enum HttpStatusText: string
   case HTTP_208 = 'Already Reported';
   case HTTP_226 = 'IM Used';
 
-  // Redirection 3xx
+    // Redirection 3xx
   case HTTP_300 = 'Multiple Choices';
   case HTTP_301 = 'Moved Permanently';
   case HTTP_302 = 'Found';
@@ -45,7 +45,7 @@ enum HttpStatusText: string
   case HTTP_307 = 'Temporary Redirect';
   case HTTP_308 = 'Permanent Redirect';
 
-  // Client Error 4xx
+    // Client Error 4xx
   case HTTP_400 = 'Bad Request';
   case HTTP_401 = 'Unauthorized';
   case HTTP_402 = 'Payment Required';
@@ -75,7 +75,7 @@ enum HttpStatusText: string
   case HTTP_431 = 'Request Header Fields Too Large';
   case HTTP_451 = 'Unavailable For Legal Reasons';
 
-  // Server Error 5xx
+    // Server Error 5xx
   case HTTP_500 = 'Internal Server Error';
   case HTTP_501 = 'Not Implemented';
   case HTTP_502 = 'Bad Gateway';
@@ -87,21 +87,21 @@ enum HttpStatusText: string
   case HTTP_508 = 'Loop Detected';
   case HTTP_510 = 'Not Extended';
   case HTTP_511 = 'Network Authentication Required';
-  
+
   public static function fromName(string $name): static
   {
-    $constName = static::class.'::'.$name;
-    if ( !defined($constName) ){
-      throw new \ValueError(static::class.'::'.$name.' not found');
+    $constName = static::class . '::' . $name;
+    if (!defined($constName)) {
+      throw new \ValueError(static::class . '::' . $name . ' not found');
     }
     return constant($constName);
   }
-  
+
   public static function fromHttpStatusCode(HttpStatusCode $statusCode): static
   {
     return self::fromName($statusCode->name);
   }
-  
+
   public static function fromHttpStatusAlias(HttpStatusAlias $statusAlias): static
   {
     return self::fromName($statusAlias->name);

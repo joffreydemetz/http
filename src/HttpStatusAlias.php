@@ -1,10 +1,8 @@
 <?php
 
 /**
- * (c) Joffrey Demetz <joffrey.demetz@gmail.com>
- * 
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ * @author    Joffrey Demetz <joffrey.demetz@gmail.com>
+ * @license   MIT License; <https://opensource.org/licenses/MIT>
  */
 
 namespace JDZ\Utils;
@@ -19,7 +17,7 @@ use JDZ\Utils\HttpStatusText;
  */
 enum HttpStatusAlias: string
 {
-    // Informational 1xx
+  // Informational 1xx
   case HTTP_100 = 'HTTP_CONTINUE';
   case HTTP_101 = 'HTTP_SWITCHING_PROTOCOLS';
   case HTTP_102 = 'HTTP_PROCESSING';
