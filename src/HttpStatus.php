@@ -62,6 +62,7 @@ enum HttpStatus: int
   case HTTP_415 = 415;
   case HTTP_416 = 416;
   case HTTP_417 = 417;
+  case HTTP_418 = 418;
   case HTTP_421 = 421;
   case HTTP_422 = 422;
   case HTTP_423 = 423;
@@ -149,6 +150,7 @@ enum HttpStatus: int
       self::HTTP_415 => 'Unsupported Media Type',
       self::HTTP_416 => 'Range Not Satisfiable',
       self::HTTP_417 => 'Expectation Failed',
+      self::HTTP_418 => "I'm a teapot",
       self::HTTP_421 => 'Misdirected Request',
       self::HTTP_422 => 'Unprocessable Entity',
       self::HTTP_423 => 'Locked',
@@ -217,6 +219,7 @@ enum HttpStatus: int
       self::HTTP_415 => 'HTTP_UNSUPPORTED_MEDIA_TYPE',
       self::HTTP_416 => 'HTTP_REQUESTED_RANGE_NOT_SATISFIABLE',
       self::HTTP_417 => 'HTTP_EXPECTATION_FAILED',
+      self::HTTP_418 => 'HTTP_I_AM_A_TEAPOT',
       self::HTTP_421 => 'HTTP_MISDIRECTED_REQUEST',
       self::HTTP_422 => 'HTTP_UNPROCESSABLE_ENTITY',
       self::HTTP_423 => 'HTTP_LOCKED',

@@ -22,6 +22,7 @@ enum HttpStatusText: string
   case HTTP_101 = 'Switching Protocols';
   case HTTP_102 = 'Processing';
   case HTTP_103 = 'Early Hints';
+  case HTTP_104 = 'Upload Resumption Supported (TEMPORARY)';
 
     // Successful 2xx
   case HTTP_200 = 'OK';
@@ -64,6 +65,7 @@ enum HttpStatusText: string
   case HTTP_415 = 'Unsupported Media Type';
   case HTTP_416 = 'Range Not Satisfiable';
   case HTTP_417 = 'Expectation Failed';
+  case HTTP_418 = "I'm a teapot";
   case HTTP_421 = 'Misdirected Request';
   case HTTP_422 = 'Unprocessable Entity';
   case HTTP_423 = 'Locked';
@@ -85,7 +87,7 @@ enum HttpStatusText: string
   case HTTP_506 = 'Variant Also Negotiates';
   case HTTP_507 = 'Insufficient Storage';
   case HTTP_508 = 'Loop Detected';
-  case HTTP_510 = 'Not Extended';
+  case HTTP_510 = 'Not Extended (OBSOLETE)';
   case HTTP_511 = 'Network Authentication Required';
 
   public static function fromName(string $name): static

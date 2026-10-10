@@ -22,6 +22,7 @@ enum HttpStatusCode: int
   case HTTP_101 = 101;
   case HTTP_102 = 102;
   case HTTP_103 = 103;
+  case HTTP_104 = 104;
 
     // Successful 2xx
   case HTTP_200 = 200;
@@ -64,6 +65,7 @@ enum HttpStatusCode: int
   case HTTP_415 = 415;
   case HTTP_416 = 416;
   case HTTP_417 = 417;
+  case HTTP_418 = 418;
   case HTTP_421 = 421;
   case HTTP_422 = 422;
   case HTTP_423 = 423;
